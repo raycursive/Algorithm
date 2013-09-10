@@ -1,4 +1,4 @@
-```python
+```py
 #file read
 #file = open("edges.txt")
 #n_vertices,n_edges = tuple(map(int,file.readline().rsplit()))
