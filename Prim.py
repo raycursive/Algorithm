@@ -1,3 +1,4 @@
+'''Python
 import heapq
 
 #file read
@@ -49,3 +50,4 @@ def prim(V,E,start=1):
         return T
 
 print(sum(prim(V,E).values()))
+'''
