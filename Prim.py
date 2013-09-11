@@ -1,14 +1,5 @@
 import heapq
 
-#file read
-#file = open("edges.txt")
-#n_vertices,n_edges = tuple(map(int,file.readline().rsplit()))
-#V = {i for i in range(1,n_vertices+1)}
-#E = {}
-#for line in file:
-#    i,j,v = tuple(map(int,line.rsplit()))
-#    E[(i,j)] = v
-
 #Edges:{(u,v):weight}
 #Vertices:{vertex}
 
@@ -45,4 +36,12 @@ def prim(V,E,start = 1):
                         T[edge] = value_to_append
         return T
 
-print(sum(prim(V,E).values()))
+if __name__ == "__main__":
+	file = open("edges.txt")
+	n_vertices,n_edges = tuple(map(int,file.readline().rsplit()))
+	V = {i for i in range(1,n_vertices+1)}
+	E = {}
+	for line in file:
+	    i,j,v = tuple(map(int,line.rsplit()))
+	    E[(i,j)] = v
+	print(sum(prim(V,E).values()))
