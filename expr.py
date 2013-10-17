@@ -30,9 +30,9 @@ class BinaryTree():
     def __repr__(self):
         output = ''
         t = deepcopy(self)
-        t.full(len(t)+1)            #to make it look better, add a layer
+        t.full(len(t) + 1)  # to make it look better, add a layer
 
-        def add_space(node):        #the rule of adding spaces to nodes
+        def add_space(node):  # the rule of adding spaces to nodes
             if not(node.lnode or node.rnode):
                 node.value = ' ' + node.value + ' '
             else:
@@ -44,11 +44,12 @@ class BinaryTree():
                     node.value = ' ' * \
                         (length // 2) + node.value + ' ' * (length // 2)
 
-        def add(node):              #add spaces (postorder-traversal)
+        def add(node):  # add spaces (postorder-traversal)
             if node.lnode or node.rnode:
                 add(node.lnode)
                 add(node.rnode)
             add_space(node)
+
         add(t)
         quene = [t]
         i = 0
@@ -63,8 +64,6 @@ class BinaryTree():
                 i += 1
             output += '\n\n'
         return output[:-1]
-
-
 
     def eval(self):
 
@@ -131,7 +130,6 @@ def postfix_to_exprtree(expr):
     return stack[0]
 
 
-
 def verticalprint(tree):
     def _printtree(tree, layer):
         if tree:
@@ -140,10 +138,3 @@ def verticalprint(tree):
             print(tree.value)
             _printtree(tree.lnode, layer + 3)
     _printtree(tree, len(tree))
-
-
-t = postfix_to_exprtree(infix_to_postfix("4*(3+2)-1"))
-print(t)
-print(t.eval())
-print(t.postorder())
-print(len(t))
