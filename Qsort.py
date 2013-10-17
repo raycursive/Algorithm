@@ -13,7 +13,6 @@ def quicksort(array, left, right):
     '''left<-0,right<-len(array)-1'''
     if left < right:
         pivotindex = partion(array, left, right)
-        COUNT += (right - left)
         quicksort(array, left, pivotindex - 1)
         quicksort(array, pivotindex + 1, right)
 
