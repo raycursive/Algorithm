@@ -26,3 +26,6 @@ def normaldistributioncdf(x, mu=0, sigma=1):
     return asm(lambda t:normaldistributionpdf(t,mu,sigma), -99999, x, 0.0000000001)
 
 print(normaldistributioncdf(0,mu=1,sigma=3))
+
+from scipy.stats import norm
+print(norm(1, 3).cdf(0))
